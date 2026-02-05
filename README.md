@@ -1,6 +1,6 @@
 # Web3bridge Rust Masterclass Cohort II - GitHub Contribution Guide
 
-Welcome to the Web3bridge Rust Masterclass Cohort I training program! This repository is used for submitting tasks, tracking student progress, and grading assessments. Follow this guide to ensure a smooth contribution process.
+Welcome to the Web3bridge Rust Masterclass Cohort II training program! This repository is used for submitting tasks, tracking student progress, and grading assessments. Follow this guide to ensure a smooth contribution process.
 
 ---
 
