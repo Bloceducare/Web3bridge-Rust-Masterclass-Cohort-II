@@ -1,0 +1,32 @@
+{
+  "6": {
+    "id": 6,
+    "name": "Toy",
+    "amount": 22.0,
+    "tx_type": "Debit"
+  },
+  "3": {
+    "id": 3,
+    "name": "Food",
+    "amount": 345.0,
+    "tx_type": "Credit"
+  },
+  "4": {
+    "id": 4,
+    "name": "Meat",
+    "amount": 432.0,
+    "tx_type": "Debit"
+  },
+  "5": {
+    "id": 5,
+    "name": "Fish",
+    "amount": 677.0,
+    "tx_type": "Debit"
+  },
+  "1": {
+    "id": 1,
+    "name": "Cloth",
+    "amount": 555.0,
+    "tx_type": "Credit"
+  }
+}
