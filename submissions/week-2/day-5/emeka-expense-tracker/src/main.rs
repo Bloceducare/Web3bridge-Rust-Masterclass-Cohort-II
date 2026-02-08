@@ -1,5 +1,5 @@
 use emeka_expense_tracker::actions::{
-    ActionTypes, add_expense, get_all_expenses, remove_expense, show_total_expenses,
+    ActionTypes, add_expense, get_all_expenses, print_report, remove_expense, show_total_expenses,
     update_expense, view_expense,
 };
 use emeka_expense_tracker::expenses::ExpenseTracker;
@@ -32,7 +32,7 @@ fn main() {
             ActionTypes::ViewExpense => view_expense(&tracker),
             ActionTypes::GetAllExpenses => get_all_expenses(&tracker),
             ActionTypes::GetTotalExpenses => show_total_expenses(&tracker),
-            ActionTypes::PrintReport => println!("Report feature is not implemented yet."),
+            ActionTypes::PrintReport => print_report(&tracker),
             ActionTypes::Quit => {
                 println!("Goodbye!");
                 break;

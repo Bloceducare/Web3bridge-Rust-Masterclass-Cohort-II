@@ -1,4 +1,5 @@
 use crate::expenses::ExpenseTracker;
+use crate::record::write_to_report;
 use std::collections::HashMap;
 use std::io;
 
@@ -56,7 +57,7 @@ fn get_list_of_items() -> HashMap<String, f64> {
     );
     let user_input = read_user_input();
     let mut items: HashMap<String, f64> = HashMap::new();
-    for item in user_input.replace(" ", "").split(',') {
+    for item in user_input.split(',') {
         let parts: Vec<&str> = item.trim().split(':').collect();
         if parts.len() == 2 {
             let name = parts[0].trim().to_string();
@@ -118,5 +119,19 @@ pub fn view_expense(tracker: &ExpenseTracker) {
         println!("Expense with ID {id}:\n{expense:#?}");
     } else {
         println!("Expense with ID {id} not found.");
+    }
+}
+
+pub fn print_report(tracker: &ExpenseTracker) {
+    let expenses = tracker.get_expenses();
+    if expenses.is_empty() {
+        println!("No expenses to report.");
+    } else {
+        let total_expense = tracker.get_total_expenses();
+        println!("Generating report...");
+        match write_to_report(expenses, total_expense) {
+            Ok(_) => println!("Report generated successfully as 'report.txt'."),
+            Err(e) => println!("Failed to generate report: {e}"),
+        }
     }
 }
