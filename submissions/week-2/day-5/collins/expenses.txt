@@ -1,0 +1,11 @@
+2|Grocery Store|86.45|Debit
+4|Coffee Shop|5.75|Debit
+5|Freelance Payment|320|Credit
+6|Ride Share|14.2|Debit
+10|Gift Received|75|Credit
+9|Utility Bill|110.3|Debit
+7|Streaming Subscription|12.99|Debit
+3|Salary Deposit|2500|Credit
+11|Restaurant Dinner|62.8|Debit
+1|New Macbook|2100000|Debit
+8|Refund — Online Order|48.5|Credit
