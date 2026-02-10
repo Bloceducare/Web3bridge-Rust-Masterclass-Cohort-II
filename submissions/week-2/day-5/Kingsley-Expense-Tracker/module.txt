@@ -1,0 +1,107 @@
+The Rust module system - this is fairly ignored when learning a language cause its not part of the cool stuffs, 
+and sadly one thing I never cared to understand in Javascript, I always go the easy route, setup a ts config file for absolute paths, and allow my IDEs do the magic. 
+The annoying part was the long chain of dot slashes(though absolute paths takes care of that). 
+With Rust though confusing but very elegant once you master it.There are three major  keywords
+
+pub - what it is…
+mod - what it is..
+use - what it is..
+
+In rust there are two ways to mark a function, variable or block as a module and that is using the mod keyword, how to use
+
+Just add
+
+
+mod expenses {
+    struct Expense {
+        title: String,
+        amount: f64,
+        date: String,
+    }
+
+
+    impl Expense {
+        fn new(title: String, amount: f64, date: String) -> Self {
+            Expense { title, amount, date }
+        }
+    }
+}
+
+
+fn main() {
+    let expense = expenses::Expense::new(
+        String::from("Groceries"),
+        150.0,
+        String::from("2024-06-01"),
+    );
+
+    println!("Expense: {} - ${} on {}", expense.title, expense.amount, expense.date);
+}
+
+
+If we notice we are using the struct Expense from the expenses module, 
+but we are not able to access it because its private by default, 
+to make it public we need to add the pub keyword before the struct definition and also before the new function, like this.
+
+
+Explain the keyword pub: pub is a keyword in Rust that is used to make items (such as functions, structs, enums, etc.) 
+public and accessible from outside the module they are defined in. 
+By default, items in Rust are private, meaning they can only be accessed within the same module. 
+When you use the pub keyword, you are explicitly allowing other modules to access and use those items.
+
+
+
+mod expenses {
+    pub struct Expense {
+        title: String,
+        amount: f64,
+        date: String,
+    }
+
+
+    impl Expense {
+        pub fn new(title: String, amount: f64, date: String) -> Self {
+            Expense { title, amount, date }
+        }
+    }
+}
+
+
+fn main() {
+    let expense = expenses::Expense::new(
+        String::from("Groceries"),
+        150.0,
+        String::from("2024-06-01"),
+    );
+
+    println!("Expense: {} - ${} on {}", expense.title, expense.amount, expense.date);
+}
+
+
+We have a problem, when we run this code,  we will get an error because the fields of the struct Expense are still private, to make them public we need to add the pub keyword before each field, like this.
+
+mod expenses {
+    pub struct Expense {
+        pub title: String,
+        pub amount: f64,
+        pub date: String,
+    }
+
+    impl Expense {
+        pub fn new(title: String, amount: f64, date: String) -> Self {
+            Expense { title, amount, date }
+        }
+    }
+}
+
+
+fn main() {
+    let expense = expenses::Expense::new(
+        String::from("Groceries"),
+        150.0,
+        String::from("2024-06-01"),
+    );
+
+    println!("Expense: {} - ${} on {}", expense.title, expense.amount, expense.date);
+}
+
