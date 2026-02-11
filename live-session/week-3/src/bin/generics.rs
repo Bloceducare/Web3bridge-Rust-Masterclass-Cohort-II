@@ -51,6 +51,20 @@ fn largest<T: PartialOrd>(list: &[T]) -> &T {
     largest
 }
 
+fn largest2<T>(list: &[T]) -> &T
+where
+    T: PartialOrd,
+{
+    let mut largest = &list[0];
+
+    for item in list {
+        if item > largest {
+            largest = item
+        }
+    }
+    largest
+}
+
 fn main() {
     let point = Point1 { x: 1, y: 2.0 };
 
