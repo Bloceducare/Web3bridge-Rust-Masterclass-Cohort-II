@@ -52,15 +52,19 @@ fn main() {
                 io::stdin().read_line(&mut amount_input).expect("Failed to read input");
                 let amount: f64 = amount_input.trim().parse().expect("Please enter a valid number");
                 
-                println!("Is this Credit or Debit? (c/d):");
-                let mut tx_input = String::new();
-                io::stdin().read_line(&mut tx_input).expect("Failed to read input");
-                let tx_input = tx_input.trim();
-                
-                let tx_type = if tx_input == "c" {
-                    TransactionType::Credit
-                } else {
-                    TransactionType::Debit
+                let tx_type = loop {
+                    println!("Is this Credit or Debit? (c/d):");
+                    let mut tx_input = String::new();
+                    io::stdin().read_line(&mut tx_input).expect("Failed to read input");
+                    let tx_input = tx_input.trim().to_lowercase();
+
+                    match tx_input.as_str() {
+                        "c" => break TransactionType::Credit,
+                        "d" => break TransactionType::Debit,
+                        _ => {
+                            println!("Invalid input. Please enter 'c' for Credit or 'd' for Debit.");
+                        }
+                    }
                 };
                 
                 let new_expense = tracker.add(name, amount, tx_type);
