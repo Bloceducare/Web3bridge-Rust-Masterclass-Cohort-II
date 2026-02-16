@@ -1,0 +1,2 @@
+ID: 2, Name: Beans, Amount: 5000.00, Type: Credit
+ID: 1, Name: Rice, Amount: 20000.00, Type: Credit
