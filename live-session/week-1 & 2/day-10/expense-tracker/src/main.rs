@@ -63,12 +63,6 @@ impl ExpenseTracker {
             }
             None => false,
         }
-        // let updated_expense = Expense {
-        //     id,
-        //     amount,
-        //     tx_type,
-        // };
-        // self.values.put(id)
     }
 
     fn delete(&mut self, id: u8) -> bool {
