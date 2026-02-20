@@ -1,0 +1,6 @@
+[package]
+name = "Stephen-Ngozi-Merkle-Tree"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
