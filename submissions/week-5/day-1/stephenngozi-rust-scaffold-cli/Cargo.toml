@@ -1,0 +1,14 @@
+[package]
+name = "stephenngozi-rust-scaffold-cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+
+dialoguer = "0.11"
+colored = "2"
+
+[[bin]]
+name = "stephenngozi-rust-cli-scaffold"
+path = "src/main.rs"
